@@ -2,6 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require('cors');
+const fs = require('fs').promises;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,9 +10,38 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from the 'public' directory
+app.use(express.static('public'));
+
 // A simple welcome message for the root endpoint
 app.get('/', (req, res) => {
     res.send('Welcome to the Avinya Web Scraper API!');
+});
+
+app.get('/api/products', async (req, res) => {
+    try {
+        const data = await fs.readFile('products.json', 'utf8');
+        res.json(JSON.parse(data));
+    } catch (error) {
+        console.error('Error reading products data:', error);
+        res.status(500).json({ error: 'Failed to retrieve products.' });
+    }
+});
+
+app.get('/api/products/:id', async (req, res) => {
+    try {
+        const data = await fs.readFile('products.json', 'utf8');
+        const products = JSON.parse(data);
+        const product = products.find(p => p.id === parseInt(req.params.id));
+        if (product) {
+            res.json(product);
+        } else {
+            res.status(404).json({ error: 'Product not found' });
+        }
+    } catch (error) {
+        console.error('Error reading product data:', error);
+        res.status(500).json({ error: 'Failed to retrieve product.' });
+    }
 });
 
 // The main scraping endpoint

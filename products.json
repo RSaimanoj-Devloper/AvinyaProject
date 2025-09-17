@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Modern Minimalist Desk Lamp",
+    "price": 49.99,
+    "image": "https://picsum.photos/seed/lamp/400/400",
+    "description": "A sleek and modern desk lamp with adjustable brightness and a minimalist design. Perfect for any home office or study area. Made from high-quality aluminum.",
+    "dimensions": "15\" H x 6\" W x 6\" D"
+  },
+  {
+    "id": 2,
+    "name": "Comfortable Ergonomic Office Chair",
+    "price": 249.99,
+    "image": "https://picsum.photos/seed/chair/400/400",
+    "description": "This ergonomic office chair provides excellent lumbar support and is fully adjustable. The breathable mesh back keeps you cool and comfortable all day.",
+    "dimensions": "45\" H x 25\" W x 25\" D"
+  },
+  {
+    "id": 3,
+    "name": "Large Hardcover Notebook Set (3-Pack)",
+    "price": 24.99,
+    "image": "https://picsum.photos/seed/notebook/400/400",
+    "description": "A set of three high-quality hardcover notebooks. Each notebook contains 200 pages of acid-free paper, perfect for journaling, note-taking, or sketching.",
+    "dimensions": "8.5\" L x 5.5\" W"
+  },
+  {
+    "id": 4,
+    "name": "Stainless Steel Insulated Water Bottle",
+    "price": 29.99,
+    "image": "https://picsum.photos/seed/bottle/400/400",
+    "description": "Keep your drinks cold for 24 hours or hot for 12 hours with this double-walled, vacuum-insulated stainless steel water bottle. 32 oz capacity.",
+    "dimensions": "10\" H x 3.5\" Diameter"
+  }
+]
