@@ -1,0 +1,265 @@
+/* Amazon-like Color Scheme */
+:root {
+    --amazon-dark-blue: #131921;
+    --amazon-light-blue: #232f3e;
+    --amazon-orange: #febd69;
+    --amazon-yellow: #f0c14b;
+    --amazon-white: #ffffff;
+    --amazon-light-gray: #eaeded;
+    --amazon-text-dark: #0f1111;
+    --amazon-text-light: #dddddd;
+    --amazon-border-color: #dddddd;
+}
+
+body {
+    font-family: "Amazon Ember", Arial, sans-serif;
+    margin: 0;
+    background-color: var(--amazon-light-gray);
+    color: var(--amazon-text-dark);
+    font-size: 14px;
+}
+
+header {
+    background-color: var(--amazon-dark-blue);
+    color: var(--amazon-white);
+    padding: 8px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--amazon-light-blue);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--amazon-white);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 5px;
+    display: inline-block;
+}
+
+.logo a:hover {
+    border-color: var(--amazon-white);
+    border-radius: 3px;
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--amazon-orange);
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: 2px solid var(--amazon-orange);
+    border-color: var(--amazon-orange);
+}
+
+.search-bar button {
+    background-color: var(--amazon-yellow);
+    border: 1px solid var(--amazon-orange);
+    padding: 0 12px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar button:hover {
+    background-color: #f3a847;
+}
+
+.search-bar svg {
+    fill: var(--amazon-text-dark);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-nav a {
+    color: var(--amazon-white);
+    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 1.2;
+    border: 1px solid transparent;
+}
+
+.header-nav a:hover {
+    border-color: var(--amazon-white);
+    border-radius: 3px;
+}
+
+.header-nav a span {
+    font-size: 12px;
+    color: var(--amazon-text-light);
+}
+
+main {
+    padding: 1.5rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.main-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.left-column {
+    flex: 2;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#ar-container {
+    width: 100%;
+    height: 600px; /* A fixed height for the AR view */
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    border: 1px solid var(--amazon-border-color);
+    border-radius: 8px;
+}
+
+#controls {
+    display: flex;
+    flex-direction: column; /* Stack input and button */
+    gap: 0.75rem;
+    background-color: var(--amazon-white);
+    padding: 1.5rem;
+    border: 1px solid var(--amazon-border-color);
+    border-radius: 8px;
+}
+
+#product-url {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #a6a6a6;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;
+}
+
+#product-url:focus {
+    outline: 1px solid var(--amazon-orange);
+    border-color: var(--amazon-orange);
+}
+
+#visualize-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+    color: var(--amazon-text-dark);
+    border: 1px solid #a88734;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: normal; /* Amazon buttons are not always bold */
+    width: 100%;
+}
+
+#visualize-btn:hover {
+    background: linear-gradient(to bottom, #f5d78e, #eeb933);
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--amazon-border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    flex-grow: 1; /* Allow chat to fill remaining space */
+}
+
+#chat-box {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    border-bottom: 1px solid var(--amazon-light-gray);
+}
+
+#chat-input-container {
+    display: flex;
+    padding: 1rem;
+    gap: 0.5rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid var(--amazon-border-color);
+}
+
+#chat-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#send-message-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--amazon-yellow);
+    border: 1px solid #a88734;
+    color: var(--amazon-text-dark);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#send-message-btn:hover {
+    background-color: #f3a847;
+}
+
+footer {
+    background-color: var(--amazon-light-blue);
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--amazon-white);
+    margin-top: 2rem;
+}
+
+.chat-message {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    max-width: 85%;
+    line-height: 1.4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.user-message {
+    background-color: #e6e6e6;
+    color: var(--amazon-text-dark);
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: var(--amazon-orange);
+    color: var(--amazon-text-dark);
+    align-self: flex-start;
+}
