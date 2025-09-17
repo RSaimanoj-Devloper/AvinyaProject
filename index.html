@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+
         <div class="header-container">
             <div class="logo">
                 <a href="#">Avinya</a>
@@ -66,6 +67,42 @@
                         <button id="send-message-btn">Send</button>
                     </div>
                 </div>
+
+        <h1>Avinya</h1>
+        <p>Your Virtual Shopping Assistant</p>
+    </header>
+    <main>
+        <div id="ar-container" style="height: 500px; position: relative; overflow: hidden;">
+            <a-scene
+                vr-mode-ui="enabled: false;"
+                renderer="logarithmicDepthBuffer: true;"
+                embedded
+                arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+                <a-assets>
+                    <a-asset-item id="product-model" src=""></a-asset-item>
+                </a-assets>
+                <a-marker preset="hiro">
+                    <a-entity
+                        id="ar-placeholder"
+                        geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5;"
+                        material="color: #FFC107;">
+                    </a-entity>
+                </a-marker>
+                <a-entity camera></a-entity>
+            </a-scene>
+        </div>
+        <div id="controls">
+            <input type="text" id="product-url" placeholder="Paste product link here">
+            <button id="visualize-btn">Visualize</button>
+        </div>
+        <div id="chat-container">
+            <div id="chat-box">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask a question...">
+                <button id="send-message-btn">Send</button>
+
             </div>
         </div>
     </main>
