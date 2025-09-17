@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avinya - Virtual Shopping Assistant</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Avinya</h1>
+        <p>Your Virtual Shopping Assistant</p>
+    </header>
+    <main>
+        <div id="ar-container" style="height: 500px; position: relative; overflow: hidden;">
+            <a-scene
+                vr-mode-ui="enabled: false;"
+                renderer="logarithmicDepthBuffer: true;"
+                embedded
+                arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+                <a-assets>
+                    <a-asset-item id="product-model" src=""></a-asset-item>
+                </a-assets>
+                <a-marker preset="hiro">
+                    <a-entity
+                        id="ar-placeholder"
+                        geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5;"
+                        material="color: #FFC107;">
+                    </a-entity>
+                </a-marker>
+                <a-entity camera></a-entity>
+            </a-scene>
+        </div>
+        <div id="controls">
+            <input type="text" id="product-url" placeholder="Paste product link here">
+            <button id="visualize-btn">Visualize</button>
+        </div>
+        <div id="chat-container">
+            <div id="chat-box">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Ask a question...">
+                <button id="send-message-btn">Send</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Avinya. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
